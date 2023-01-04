@@ -18,18 +18,14 @@ public class Board extends JFrame{
 
     public Board(){
         int pairs = 10;
-
         for (int c = 0; c < pairs; c++){
             cardFace.add(c);
             cardFace.add(c);
         }
-
         for (int x = cardFace.size(); x > 0; x--){
             Integer w = cardFace.remove(r.nextInt(cardFace.size()));
             usedValues.add(w);
         }
-        
-
         for (int face: usedValues){
             Card c = new Card ();
             c.setFace(face);
@@ -47,9 +43,7 @@ public class Board extends JFrame{
                 checkCards();
             } 
         });
-
         t.setRepeats(false);
-
         Container pane = getContentPane();
         pane.setLayout(new GridLayout(4, 5));
         for (Card c : cards){
@@ -63,7 +57,6 @@ public class Board extends JFrame{
             c1 = selected;
             c1.setText(String.valueOf(c1.getFace()));
         }
-
         if (c1 != null && c1 != selected && c2 == null){
             c2 = selected;
             c2.setText(String.valueOf(c2.getFace()));
