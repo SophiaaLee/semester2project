@@ -72,10 +72,10 @@ public class Board extends JFrame{
     }
 
     public void checkCards(){
-        if (c1.getFace() == c2.getFace()){//match condition
+        if (c1.getFace() == c2.getFace()){ //match condition
             c1.setEnabled(false); //disables the button
             c2.setEnabled(false);
-            c1.setMatch(true); //flags the button as having been matched
+            c1.setMatch(true); //marks as matched
             c2.setMatch(true);
             if (this.isGameWon()){
                 JOptionPane.showMessageDialog(this, "You win!");
@@ -83,7 +83,7 @@ public class Board extends JFrame{
             }
         }
         else{
-            c1.setText(""); //'hides' text
+            c1.setText(""); //hides text
             c2.setText("");
         }
         c1 = null; //reset c1 and c2
@@ -99,6 +99,4 @@ public class Board extends JFrame{
         return true;
     }
 
-}
-
-//codereview.stackexchange.com/questions/85833/basic-memory-match-game-in-java 
+} 
